@@ -1,0 +1,5 @@
+1.8种包装类提供不同类型间的转换方式
+   .Number父类提供6个共性方法
+   .parseXXX()静态方法
+   .valueOf()静态方法
+2.注意:需保证类型兼容，否则抛出NumberFormatException异常

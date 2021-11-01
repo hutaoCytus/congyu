@@ -1,0 +1,4 @@
+1.不依赖外部类对象，可直接创建或通过类名访问，可声明静态成员
+2.只能直接访问外部类的静态成员（实例成员需要实例化外部类对象）。
+Outer.Inner inner=new Outer.Inner();
+Outer.Inner.show();

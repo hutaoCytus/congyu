@@ -1,0 +1,7 @@
+System系统类，主要用于获取系统的属性数据和其他操作，构造方法私有的
+
+方法名                               说明
+static void arraycopy(...)          复制数组
+static long currentTimeMillis()     获取当前系统时间，返回毫秒值
+static void gc()                    建议JVM赶快启动垃圾回收器回收垃圾
+static void exit(int status)        退出jvm，如果参数为0表示正常退出jvm，非0则表示异常退出jvm

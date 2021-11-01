@@ -1,0 +1,66 @@
+1.概念:对象的容器，定义对多个对象进行操作的常用方法，可实现数组的功能
+2.和数组的区别:
+   .数组长度固定，集合长度不固定
+   .数组可以储存基本类型和引用类型，集合只能储存引用类型
+3.位置:java.util.*
+
+                                    Collection(该体系结构的根接口，代表一组对象，称为集合)
+                                         ↑
+                          _______________|______________
+                          |                             |
+                         List                          Set
+                          ↑                             ↑
+                __________|___________        __________|___________
+                |         |          |        |                    |
+          ArrayList   LinkedList   Vector     HashSet            SortSet
+                                                                   ↑
+                                                                   TreeSet
+   List接口的特点:有序，有下标，元素可重复
+    Set接口的特点:无序，无下标，元素不可重复
+
+
+4.迭代器：专门用来遍历集合的一种方式
+   .hastNext();判断是否有下一个元素，有就返回true，无就返回falses
+   .next();获取下一个元素
+   .remove();删除元素
+
+5.List接口的特点：有序有下标，可以重复
+6.List常见实现类
+   ArrayList：
+   源码分析：DEFAULT_CAPACITY=10；默认容量
+   注意:如果没有向集合中添加任何元素时，容量0，添加一个元素之后 容量10
+       每次扩容大小是原来的1.5倍
+           EMPTY_ELEMENTDATA = {}存放元素的数组
+           size实际元素个数
+           add()添加元素
+
+   Vector：
+
+   LinkedList
+   源码分析:int size:集合的大小
+           Node first:链表的头结点
+           Node  last:链表的尾节点
+       void linkLast(E e) {
+               final Node<E> l = last;
+               final Node<E> newNode = new Node<>(l, e, null);
+               last = newNode;
+               if (l == null)
+                   first = newNode;
+               else
+                   l.next = newNode;
+               size++;
+               modCount++;
+           }
+
+
+       private static class Node<E> {
+               E item;
+               Node<E> next;
+               Node<E> prev;
+
+               Node(Node<E> prev, E element, Node<E> next) {
+                   this.item = element;
+                   this.next = next;
+                   this.prev = prev;
+               }
+           }
