@@ -1,8 +1,0 @@
-1.HashMap(重点)
-  .JDK1.2版本，线程不安全，运行效率快，允许用null作为key或是value
-2.Hashtable(不常用)
-  .JDK1.0版本，线程安全，运行效率慢，不允许null作为key或是value
-3.Properties
-  .Hashtable的子类，要求key和value都是String。通常用于配置文件的读取
-4.TreeMap
-  .实现SortedMap接口(是Map的子接口)，可以对key自动排序
